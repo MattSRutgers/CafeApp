@@ -8,19 +8,33 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static com.example.cafeapp.MainActivity.DONUT_ORDER;
+import static com.example.cafeapp.MainActivity.customerOrder;
+
+/**
+ * @Authors Matthew Schilling and Gordon Miller
+ * The donut activity class handles ordering of donuts for the cafe app.
+ */
 public class DonutActivity extends AppCompatActivity {
     public static final String DONUT_ORDER_KEY = "com.example.cafeapp.DONUTKEY";
     private ArrayList<Donut> curOrder = new ArrayList<>();
     private ArrayList<Order> donutOrder = new ArrayList<>();
     private int orderNumber = 1;
 
+    /**
+     * This method initializes the spinner objects with their values when creating
+     * the view for donut ordering.
+     * @param savedInstanceState the object to create from
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donut);
+        //getIntent();
 
         //create the donut flavor spinner and populate
         Spinner spinner = (Spinner) findViewById(R.id.donutSpinner);
@@ -43,12 +57,18 @@ public class DonutActivity extends AppCompatActivity {
      * @param view the donut ordering screen
      */
     public void placeDonutOrder(View view){
-        Intent intent = new Intent();
-        intent.putExtra(DONUT_ORDER_KEY,"REPLACE WITH DONUT ORDER");
-        setResult(Activity.RESULT_OK,intent);
-        finish();
+        Order addingOrder = approveOrder();
+        //Intent intent = new Intent(this, Donut.class);
+        //intent.putExtra(DONUT_ORDER,donutOrder);
+        customerOrder.add(addingOrder);
+        //setResult(Activity.RESULT_OK,intent);
+        //finish();
     }
 
+    /**
+     * The addDonut method adds donut objects to an arraylist of donuts
+     * @param view the donut ordering view
+     */
     public void addDonut(View view){
         Spinner flavorSpinner = (Spinner) findViewById(R.id.donutSpinner);
         String flavor = flavorSpinner.getSelectedItem().toString();
@@ -59,13 +79,28 @@ public class DonutActivity extends AppCompatActivity {
             Donut donut = new Donut(flavor);
             curOrder.add(donut);
         }
+        for (Donut donut : curOrder)
+            Toast.makeText(getApplicationContext(),(donut.toString()), Toast.LENGTH_SHORT).show();
 
     }
 
-    public void approveOrder (View view){
+    /**
+     * The approveOrder method finalizes the user's donut order and adds it to an arraylist
+     * of order objects that will eventually be passed back to the main activity.
+     */
+    private Order approveOrder (){
         Order donutOrder = new Order(orderNumber);
         for(Donut donut : curOrder)
             donutOrder.add(donut);
         orderNumber ++;
+        curOrder.clear();
+        return donutOrder;
+    }
+
+    /**
+     * The subtotal method keeps a running total of the donut costs
+     */
+    public void subtotal(){
+
     }
 }

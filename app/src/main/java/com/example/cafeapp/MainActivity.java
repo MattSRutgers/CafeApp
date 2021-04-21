@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import static com.example.cafeapp.DonutActivity.DONUT_ORDER_KEY;
 
@@ -12,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int DONUT_ORDER = 1;
     public static final int COFFEE_ORDER = 2;
+    public static ArrayList<Order> customerOrder = new ArrayList<>();
     //public static final String DONUT_KEY =
+    private ArrayList<Order> curOrder = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +49,12 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == DONUT_ORDER){
             if(resultCode == RESULT_OK){
                 //this needs to be changed to accept serializable objects and add the donut order to the list of orders.
-                String result = data.getStringExtra(DONUT_ORDER_KEY);
-                System.out.println(result);
+                Order tempOrder = (Order) data.getSerializableExtra(DONUT_ORDER_KEY);
+                curOrder.add(tempOrder);
+                for (Order order : curOrder)
+                    Toast.makeText(getApplicationContext(), (int) order.getTotal(), Toast.LENGTH_SHORT).show();
+                //String result = data.getStringExtra(DONUT_ORDER_KEY);
+                //System.out.println(result);
 
             }
         }

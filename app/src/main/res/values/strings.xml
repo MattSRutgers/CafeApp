@@ -20,7 +20,7 @@
     <string name="addCoffee">Add coffee to order</string>
     <string name="addIns">Select addins, $0.20 each</string>
     <string name="subtotalTag">Subtotal: $</string>
-    <string name="subtotal" >1.39</string>
+    <string name="subtotal">1.39</string>
     <string-array name="donutArray">
         <item>Chocolate</item>
         <item>Glazed</item>

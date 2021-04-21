@@ -10,11 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CafeApp">
         <activity
+            android:name=".StoreOrders"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".OrderDetails" />
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".CoffeeActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DonutActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
