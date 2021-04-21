@@ -12,6 +12,15 @@
     <string name="largeCoffee">Grande</string>
     <string name="ventiCoffee">Venti</string>
     <string name="sizeLabelText">Select Coffee Size</string>
+    <string name="cream">Cream</string>
+    <string name="syrup">Syrup</string>
+    <string name="milk">Milk</string>
+    <string name="caramel">Caramel</string>
+    <string name="whippedCream">Whipped Cream</string>
+    <string name="addCoffee">Add coffee to order</string>
+    <string name="addIns">Select addins, $0.20 each</string>
+    <string name="subtotalTag">Subtotal: $</string>
+    <string name="subtotal" >1.39</string>
     <string-array name="donutArray">
         <item>Chocolate</item>
         <item>Glazed</item>

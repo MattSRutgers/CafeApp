@@ -9,8 +9,13 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 public class DonutActivity extends AppCompatActivity {
     public static final String DONUT_ORDER_KEY = "com.example.cafeapp.DONUTKEY";
+    private ArrayList<Donut> curOrder = new ArrayList<>();
+    private ArrayList<Order> donutOrder = new ArrayList<>();
+    private int orderNumber = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,5 +47,25 @@ public class DonutActivity extends AppCompatActivity {
         intent.putExtra(DONUT_ORDER_KEY,"REPLACE WITH DONUT ORDER");
         setResult(Activity.RESULT_OK,intent);
         finish();
+    }
+
+    public void addDonut(View view){
+        Spinner flavorSpinner = (Spinner) findViewById(R.id.donutSpinner);
+        String flavor = flavorSpinner.getSelectedItem().toString();
+        Spinner countSpinner = (Spinner) findViewById(R.id.donutQuantitySpinner);
+        int count = countSpinner.getSelectedItemPosition() + 1 ;
+
+        for(int i = 0; i < count; i++){
+            Donut donut = new Donut(flavor);
+            curOrder.add(donut);
+        }
+
+    }
+
+    public void approveOrder (View view){
+        Order donutOrder = new Order(orderNumber);
+        for(Donut donut : curOrder)
+            donutOrder.add(donut);
+        orderNumber ++;
     }
 }
