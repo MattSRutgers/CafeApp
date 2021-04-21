@@ -7,10 +7,11 @@
     <string name="donutCountLabel">Select Quantity</string>
     <string name="addDonutButton">Add to Order</string>
     <string name="donutReview">Review Order</string>
-    <string name="smallCoffee">small</string>
-    <string name="mediumCoffee">medium</string>
-    <string name="largeCoffee">large</string>
-    <string name="ventiCoffee">venti</string>
+    <string name="smallCoffee">Short</string>
+    <string name="mediumCoffee">Tall</string>
+    <string name="largeCoffee">Grande</string>
+    <string name="ventiCoffee">Venti</string>
+    <string name="sizeLabelText">Select Coffee Size</string>
     <string-array name="donutArray">
         <item>Chocolate</item>
         <item>Glazed</item>

@@ -27,22 +27,17 @@ public class Coffee extends MenuItem implements Customizable, Serializable {
 	/**
 	 * The coffee constructor creates menu items that represent different cups of coffee
 	 * @param size the coffee cup size
-	 * @param cost the cost of the coffee
-	 * @param numCream the number of creams the user ordered
-	 * @param numSyrup the number of syrup the user ordered
-	 * @param numMilk the number of milks the user ordered
-	 * @param numCaramel the number of caramel the user ordered
-	 * @param numWhippedCream the number of whipped cream the user ordered
+
 	 */
-	Coffee(String size, double cost, int numCream, int numSyrup, int numMilk, int numCaramel, int numWhippedCream) {
+	Coffee(String size, int numAddIns) {
 		//cost = this.itemPrice();
-		super(COFFEE, cost);
+		super(COFFEE);
 		this.size = size;
-		this.addInAmounts[0] = numCream;
-		this.addInAmounts[1] = numSyrup;
-		this.addInAmounts[2] = numMilk;
-		this.addInAmounts[3] = numCaramel;
-		this.addInAmounts[4] = numWhippedCream;
+//		this.addInAmounts[0] = numCream;
+//		this.addInAmounts[1] = numSyrup;
+//		this.addInAmounts[2] = numMilk;
+//		this.addInAmounts[3] = numCaramel;
+//		this.addInAmounts[4] = numWhippedCream;
 		this.numAddIns = sum(addInAmounts);
 		
 	}

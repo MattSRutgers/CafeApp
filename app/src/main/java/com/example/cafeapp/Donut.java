@@ -27,7 +27,7 @@ public class Donut extends MenuItem implements Customizable, Serializable {
 	 */
 	Donut(String flavor, String type, double cost) {
 		//cost = this.itemPrice();
-		super(DONUT, cost);
+		super(DONUT);
 		this.type = type;
 		this.flavor = flavor;
 	}

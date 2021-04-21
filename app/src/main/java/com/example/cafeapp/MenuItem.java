@@ -12,9 +12,9 @@ public class MenuItem implements Serializable {
 	private String description;
 	private double cost;
 	
-	MenuItem(String description, double cost){
+	MenuItem(String description){
 		this.description = description;
-		this.cost = cost;
+		//this.cost = cost;
 	}
 	
 	/**
