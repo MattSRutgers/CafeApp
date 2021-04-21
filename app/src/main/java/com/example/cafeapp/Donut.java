@@ -10,25 +10,18 @@ import java.io.Serializable;
  *
  */
 public class Donut extends MenuItem implements Customizable, Serializable {
-	private String type;
 	private String flavor;
-	//private double cost = 0.0;
 	private final static String DONUT = "Donut";
-	private final double YEASTPRICE = 1.39;
-	private final double CAKEPRICE = 1.59;
-	private final double MINIPRICE = 0.33;
+	private final double PRICE = 1.39;
+
 
 
 	/**
 	 * The donut constructor
 	 * @param flavor the flavor of the donut
-	 * @param type the type of the donut
-	 * @param cost the cost of the donut
 	 */
-	Donut(String flavor, String type, double cost) {
-		//cost = this.itemPrice();
+	Donut(String flavor) {
 		super(DONUT);
-		this.type = type;
 		this.flavor = flavor;
 	}
 
@@ -46,7 +39,7 @@ public class Donut extends MenuItem implements Customizable, Serializable {
 	 */
 	@Override
 	public String toString() {
-		String donutDetails = flavor + " " +type + " " + DONUT + " | $" + doubleToDollar(this.itemPrice()) ;
+		String donutDetails = flavor +  DONUT + " | $" + PRICE ;
 		return donutDetails;
 	}
 	/**
@@ -54,14 +47,7 @@ public class Donut extends MenuItem implements Customizable, Serializable {
 	 */
 	@Override
 	public double itemPrice() {
-		double findPrice = 0;
-		if(type.equalsIgnoreCase("Yeast"))
-			findPrice = YEASTPRICE;
-		if(type.equalsIgnoreCase("Cake"))
-			findPrice = CAKEPRICE;
-		if(type.equalsIgnoreCase("Mini Donut"))
-			findPrice = MINIPRICE;
-		return findPrice;
+		return PRICE;
 	}
 
 }
