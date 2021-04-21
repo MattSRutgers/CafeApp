@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">CafeApp</string>
+    <string name="reviewButton">Review Order</string>
+    <string name="storeOrderButton">Store Orders</string>
+    <string name="DonutOrderingTitle">Donut Ordering</string>
+    <string name="flavorLabel">Select Flavor</string>
+    <string name="donutCountLabel">Select Quantity</string>
+    <string name="addDonutButton">Add to Order</string>
+    <string name="donutReview">Review Order</string>
+    <string name="smallCoffee">small</string>
+    <string name="mediumCoffee">medium</string>
+    <string name="largeCoffee">large</string>
+    <string name="ventiCoffee">venti</string>
+    <string-array name="donutArray">
+        <item>Chocolate</item>
+        <item>Glazed</item>
+        <item>Boston Cream</item>
+        <item>Bear Claw</item>
+        <item>Plain</item>
+        <item>Powdered Sugar</item>
+    </string-array>
+    <string-array name="count">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+</resources>
