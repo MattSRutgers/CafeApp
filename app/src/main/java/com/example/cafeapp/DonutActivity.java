@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import static com.example.cafeapp.MainActivity.DONUT_ORDER;
@@ -74,13 +75,14 @@ public class DonutActivity extends AppCompatActivity {
         String flavor = flavorSpinner.getSelectedItem().toString();
         Spinner countSpinner = (Spinner) findViewById(R.id.donutQuantitySpinner);
         int count = countSpinner.getSelectedItemPosition() + 1 ;
+        Toast.makeText(getApplicationContext(),(Integer.toString(count)), Toast.LENGTH_SHORT).show();
 
         for(int i = 0; i < count; i++){
             Donut donut = new Donut(flavor);
             curOrder.add(donut);
         }
-        for (Donut donut : curOrder)
-            Toast.makeText(getApplicationContext(),(donut.toString()), Toast.LENGTH_SHORT).show();
+//        for (Donut donut : curOrder)
+//            Toast.makeText(getApplicationContext(),(donut.toString()), Toast.LENGTH_SHORT).show();
 
     }
 
@@ -102,5 +104,22 @@ public class DonutActivity extends AppCompatActivity {
      */
     public void subtotal(){
 
+    }
+
+    /**
+     * The review order method calls the order details activity and passes it the curOrder object
+     */
+    public void reviewOrder(View view){
+//        ArrayList<String> orderList = new ArrayList<String>();
+//        for(Donut donut: curOrder){
+//            orderList.add(donut.toString());
+//        }
+        //Bundle passBundle = new Bundle();
+        //passBundle.putSerializable(DONUT_ORDER_KEY, curOrder);
+        Intent intent = new Intent(this, OrderDetails.class);
+        intent.putExtra("Test", (Serializable) curOrder);
+
+        //intent.putStringArrayListExtra(DONUT_ORDER_KEY, orderList);
+        startActivity(intent);
     }
 }

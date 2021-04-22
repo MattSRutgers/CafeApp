@@ -21,6 +21,8 @@
     <string name="addIns">Select addins, $0.20 each</string>
     <string name="subtotalTag">Subtotal: $</string>
     <string name="subtotal">1.39</string>
+    <string name="remove">Remove</string>
+    <string name="placeOrder">Place Order</string>
     <string-array name="donutArray">
         <item>Chocolate</item>
         <item>Glazed</item>
