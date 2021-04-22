@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void startCoffeeOrder(View view){
         Intent intent = new Intent(this, CoffeeActivity.class);
-        startActivityForResult(intent, COFFEE_ORDER);
+        startActivity(intent);
     }
 
     public void userOrder(View view){
@@ -50,21 +50,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if(requestCode == DONUT_ORDER){
-            if(resultCode == RESULT_OK){
-                //this needs to be changed to accept serializable objects and add the donut order to the list of orders.
-                Order tempOrder = (Order) data.getSerializableExtra(DONUT_ORDER_KEY);
-                curOrder.add(tempOrder);
-                for (Order order : curOrder)
-                    Toast.makeText(getApplicationContext(), (int) order.getTotal(), Toast.LENGTH_SHORT).show();
-                //String result = data.getStringExtra(DONUT_ORDER_KEY);
-                //System.out.println(result);
-
-            }
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if(requestCode == DONUT_ORDER){
+//            if(resultCode == RESULT_OK){
+//                //this needs to be changed to accept serializable objects and add the donut order to the list of orders.
+//                Order tempOrder = (Order) data.getSerializableExtra(DONUT_ORDER_KEY);
+//                curOrder.add(tempOrder);
+//                for (Order order : curOrder)
+//                    Toast.makeText(getApplicationContext(), (int) order.getTotal(), Toast.LENGTH_SHORT).show();
+//                //String result = data.getStringExtra(DONUT_ORDER_KEY);
+//                //System.out.println(result);
+//
+//            }
+//        }
+//    }
 }

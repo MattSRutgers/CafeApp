@@ -54,6 +54,7 @@ public class OrderDetails extends AppCompatActivity{
 
     }
     private void updateList(ArrayList list){
+        newOrderList.clear();
         newOrderList.addAll(list);
 
     }
