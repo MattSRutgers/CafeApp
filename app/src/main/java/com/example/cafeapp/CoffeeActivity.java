@@ -11,8 +11,8 @@ import android.widget.Toast;
 import static com.example.cafeapp.MainActivity.customerOrder;
 
 public class CoffeeActivity extends AppCompatActivity {
-    private String coffeeSize = "short";
-    private String addIns;
+    private String coffeeSize = "Short";
+    private String addIns = "|";
     private int numAddIns;
     private int orderNum = 100;
 
@@ -48,12 +48,12 @@ public class CoffeeActivity extends AppCompatActivity {
             addIns += " whippedCream |";
             numAddIns ++;
         }
-        Coffee tempCoffee = new Coffee(coffeeSize, numAddIns);
+        Coffee tempCoffee = new Coffee(coffeeSize, numAddIns, addIns);
         Order coffeeOrder = new Order(orderNum);
         coffeeOrder.add(tempCoffee);
         customerOrder.add(coffeeOrder);
         Toast.makeText(getApplicationContext(),coffeeSize + " coffee with " +
-                addIns +" added to order", Toast.LENGTH_SHORT).show();
+                addIns +" added to order", Toast.LENGTH_LONG).show();
         finish();
     }
 

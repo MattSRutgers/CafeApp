@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 public class Coffee extends MenuItem implements Customizable, Serializable {
 	private String size;
+	private String addIns;
 	private final static String[] ADDIN_NAMES = {"Cream", "Syrup", "Milk", "Caramel", "Whipped Cream"};
 	private int[] addInAmounts = new int[5];
 	private int numAddIns = 0;
@@ -29,7 +30,7 @@ public class Coffee extends MenuItem implements Customizable, Serializable {
 	 * @param size the coffee cup size
 
 	 */
-	Coffee(String size, int numAddIns) {
+	Coffee(String size, int numAddIns, String addIns) {
 		//cost = this.itemPrice();
 		super(COFFEE);
 		this.size = size;
@@ -38,7 +39,8 @@ public class Coffee extends MenuItem implements Customizable, Serializable {
 //		this.addInAmounts[2] = numMilk;
 //		this.addInAmounts[3] = numCaramel;
 //		this.addInAmounts[4] = numWhippedCream;
-		this.numAddIns = sum(addInAmounts);
+		this.numAddIns = numAddIns;
+		this.addIns = addIns;
 		
 	}
 
@@ -76,14 +78,14 @@ public class Coffee extends MenuItem implements Customizable, Serializable {
 	 */
 	@Override
 	public String toString() {
-		String coffeeDetails = size + " " + COFFEE + " | ";
-		for(int i=0;i<5;i++){
-			if(addInAmounts[i]>0) {
-				if(i!=0)
-					coffeeDetails += ", ";
-				coffeeDetails += + addInAmounts[i] + "x " + ADDIN_NAMES[i];
-			}
-		}
+		String coffeeDetails = size + " " + COFFEE + " | " + addIns;
+//		for(int i=0;i<5;i++){
+//			if(addInAmounts[i]>0) {
+//				if(i!=0)
+//					coffeeDetails += ", ";
+//				coffeeDetails += + addInAmounts[i] + "x " + ADDIN_NAMES[i];
+//			}
+//		}
 		coffeeDetails+= " | $" + doubleToDollar(this.itemPrice());
 		return coffeeDetails;
 	}
