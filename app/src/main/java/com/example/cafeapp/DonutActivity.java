@@ -75,14 +75,16 @@ public class DonutActivity extends AppCompatActivity {
         String flavor = flavorSpinner.getSelectedItem().toString();
         Spinner countSpinner = (Spinner) findViewById(R.id.donutQuantitySpinner);
         int count = countSpinner.getSelectedItemPosition() + 1 ;
-        Toast.makeText(getApplicationContext(),(Integer.toString(count)), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),(Integer.toString(count)) + "", Toast.LENGTH_SHORT).show();
 
         for(int i = 0; i < count; i++){
             Donut donut = new Donut(flavor);
             curOrder.add(donut);
         }
-//        for (Donut donut : curOrder)
-//            Toast.makeText(getApplicationContext(),(donut.toString()), Toast.LENGTH_SHORT).show();
+        for (Donut donut : curOrder) {
+            Toast.makeText(getApplicationContext(), (Integer.toString(count) +
+                    donut.toString()), Toast.LENGTH_SHORT).show();
+        }
 
     }
 
@@ -118,8 +120,6 @@ public class DonutActivity extends AppCompatActivity {
         //passBundle.putSerializable(DONUT_ORDER_KEY, curOrder);
         Intent intent = new Intent(this, OrderDetails.class);
         intent.putExtra("Test", (Serializable) curOrder);
-
-        //intent.putStringArrayListExtra(DONUT_ORDER_KEY, orderList);
         startActivity(intent);
     }
 }

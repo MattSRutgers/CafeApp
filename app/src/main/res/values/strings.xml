@@ -23,6 +23,9 @@
     <string name="subtotal">1.39</string>
     <string name="remove">Remove</string>
     <string name="placeOrder">Place Order</string>
+    <string name="orderInstructionText">Click an item to remove it</string>
+    <string name="addToStore">Finalize Order</string>
+    <string name="userOrderInstruction">Click an item to remove</string>
     <string-array name="donutArray">
         <item>Chocolate</item>
         <item>Glazed</item>

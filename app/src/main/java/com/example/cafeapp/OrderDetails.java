@@ -66,6 +66,7 @@ public class OrderDetails extends AppCompatActivity{
         orderNumber ++;
         customerOrder.add(newOrder);
         newOrderList.clear();
+        finish();
 
     }
 }

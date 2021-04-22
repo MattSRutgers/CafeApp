@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import static com.example.cafeapp.DonutActivity.DONUT_ORDER_KEY;
@@ -42,6 +43,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CoffeeActivity.class);
         startActivityForResult(intent, COFFEE_ORDER);
     }
+
+    public void userOrder(View view){
+        Intent intent = new Intent(this, userOrder.class);
+        intent.putExtra("Test", (Serializable) customerOrder);
+        startActivity(intent);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);

@@ -9,12 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CafeApp">
+        <activity android:name=".userOrder"></activity>
         <activity
             android:name=".StoreOrders"
             android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".OrderDetails" />
-            android:parentActivityName=".MainActivity" />
+        <activity android:name=".OrderDetails" />
         <activity
             android:name=".CoffeeActivity"
             android:parentActivityName=".MainActivity" />
