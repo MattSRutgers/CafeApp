@@ -102,14 +102,14 @@ public class Coffee extends MenuItem implements Customizable, Serializable {
 	 * @param array the array to sum
 	 * @return the sum found
 	 */
-	private static int sum(int[] array) {
-		int sum = 0;
-		for(int i = 0; i< array.length; i++)
-		{
-			sum += array[i];
-		}
-		return sum;
-	}
+//	private static int sum(int[] array) {
+//		int sum = 0;
+//		for(int i = 0; i< array.length; i++)
+//		{
+//			sum += array[i];
+//		}
+//		return sum;
+//	}
 	/**
 	 * This method determines the price
 	 * @param size of the coffee

@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import static com.example.cafeapp.MainActivity.customerOrder;
 import static com.example.cafeapp.MainActivity.storeOrder;
 
 public class userOrder extends AppCompatActivity {
@@ -60,6 +61,7 @@ public class userOrder extends AppCompatActivity {
         //then make the store orders button in main activity load the store orders just like this one
         storeOrder.addAll(passList);
         passList.clear();
+        customerOrder.clear();
         finish();
     }
 
