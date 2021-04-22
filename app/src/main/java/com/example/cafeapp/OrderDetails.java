@@ -16,6 +16,10 @@ import java.util.List;
 import static com.example.cafeapp.DonutActivity.DONUT_ORDER_KEY;
 import static com.example.cafeapp.MainActivity.customerOrder;
 
+/**
+ * @Author Matthew Schilling and Gordon Miller
+ * The orderDetails class maintains a list of menu items the user has selected
+ */
 public class OrderDetails extends AppCompatActivity{
     private ArrayList<MenuItem> newOrderList = new ArrayList<>();
     //private  ArrayList<String> asString;
@@ -53,6 +57,11 @@ public class OrderDetails extends AppCompatActivity{
         });
 
     }
+
+    /**
+     * The update list method mirrors changes made to the listview.
+     * @param list the arraylist of menu items the user has removed from
+     */
     private void updateList(ArrayList list){
         newOrderList.clear();
         newOrderList.addAll(list);
@@ -60,6 +69,10 @@ public class OrderDetails extends AppCompatActivity{
     }
 
 
+    /**
+     * The placeOrder method adds the users selection to their order.
+     * @param view
+     */
     public void placeOrder (View view){
         Order newOrder = new Order(orderNumber);
         for(MenuItem item : newOrderList)

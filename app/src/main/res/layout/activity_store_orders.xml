@@ -6,4 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".StoreOrders">
 
+    <ListView
+        android:id="@+id/storeOrderListView"
+        android:layout_width="330dp"
+        android:layout_height="533dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/storeOrderRemove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/storeRemoveBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

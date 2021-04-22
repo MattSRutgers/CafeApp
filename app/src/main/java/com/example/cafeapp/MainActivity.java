@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int COFFEE_ORDER = 2;
     public static ArrayList<Order> customerOrder = new ArrayList<>();
     //public static final String DONUT_KEY =
-    private ArrayList<Order> curOrder = new ArrayList<>();
+    public static ArrayList<Order> storeOrder = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
     public void userOrder(View view){
         Intent intent = new Intent(this, userOrder.class);
         intent.putExtra("Test", (Serializable) customerOrder);
+        startActivity(intent);
+    }
+
+    public void startStoreOrder(View view){
+        Intent intent = new Intent(this, StoreOrders.class);
+        intent.putExtra("Test2", (Serializable) storeOrder);
         startActivity(intent);
     }
 

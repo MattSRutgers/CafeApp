@@ -26,6 +26,7 @@
     <string name="orderInstructionText">Click an item to remove it</string>
     <string name="addToStore">Finalize Order</string>
     <string name="userOrderInstruction">Click an item to remove</string>
+    <string name="storeRemoveBtn">Remove Order</string>
     <string-array name="donutArray">
         <item>Chocolate</item>
         <item>Glazed</item>

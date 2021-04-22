@@ -9,16 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CafeApp">
-        <activity android:name=".userOrder"></activity>
+        <activity
+            android:name=".userOrder"
+            android:label="Store Orders"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".StoreOrders"
+            android:label="Store Orders"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".OrderDetails" />
+        <activity
+            android:name=".OrderDetails"
+            android:label="Order Details"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".CoffeeActivity"
+            android:label="Coffee Order"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DonutActivity"
+            android:label="Donut Order"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
