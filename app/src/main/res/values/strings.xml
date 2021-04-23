@@ -38,6 +38,7 @@
     <string name="totalString">Total</string>
     <string name="totalValue">0.00</string>
     <string name="storeOrderLabel">Tap and item to remove</string>
+    <string name="donutInstructions">Select flavor and quantity, then press add button to add to order. When finished ordering return using back arrow.</string>
     <string-array name="donutArray">
         <item>Chocolate</item>
         <item>Glazed</item>
