@@ -51,7 +51,7 @@ public class UserOrder extends AppCompatActivity {
         TextView taxView = (TextView) findViewById(R.id.taxValue);
         TextView totalView = (TextView) findViewById(R.id.totalValue);
         String temp = doubleToDollar(orderSubtotal);
-        tax = orderSubtotal * TAX_RATE;
+        tax = (orderSubtotal * TAX_RATE);
         total = tax + orderSubtotal;
         String totalTemp = doubleToDollar(total);
         String taxTemp = doubleToDollar(tax);
