@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CafeApp">
         <activity
-            android:name=".userOrder"
+            android:name=".UserOrder"
             android:label="Store Orders"
             android:parentActivityName=".MainActivity" />
         <activity

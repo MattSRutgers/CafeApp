@@ -5,12 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-
-import static com.example.cafeapp.DonutActivity.DONUT_ORDER_KEY;
 
 /**
  * @Author Matthew Schilling and Gordon Miller
@@ -53,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view the main menu view
      */
     public void userOrder(View view){
-        Intent intent = new Intent(this, userOrder.class);
+        Intent intent = new Intent(this, UserOrder.class);
         intent.putExtra("Test", (Serializable) customerOrder);
         startActivity(intent);
     }

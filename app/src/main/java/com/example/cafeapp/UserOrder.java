@@ -18,7 +18,7 @@ import static com.example.cafeapp.MainActivity.storeOrder;
  * @Author Matthew Schilling and Gordon Miller
  * THe user order method keeps track of the users current order
  */
-public class userOrder extends AppCompatActivity {
+public class UserOrder extends AppCompatActivity {
     private ArrayList<Order> passList = new ArrayList<>();
 
     @Override
