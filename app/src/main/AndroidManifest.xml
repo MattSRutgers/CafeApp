@@ -22,11 +22,11 @@
             android:label="Order Details"
             android:parentActivityName=".MainActivity"/>
         <activity
-            android:name=".CoffeeActivity"
+            android:name=".OrderingCoffeeActivity"
             android:label="Coffee Order"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".DonutActivity"
+            android:name=".OrderingDonutActivity"
             android:label="Donut Order"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">

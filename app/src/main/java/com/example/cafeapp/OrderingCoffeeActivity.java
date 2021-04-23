@@ -17,7 +17,7 @@ import static com.example.cafeapp.MenuItem.doubleToDollar;
  * The coffee activity class allows a user to select what type of coffee they would like then
  * creates a coffee object based on that selection
  */
-public class CoffeeActivity extends AppCompatActivity {
+public class OrderingCoffeeActivity extends AppCompatActivity {
     private String coffeeSize = "Short";
     private String addIns = "|";
     private int numAddIns;

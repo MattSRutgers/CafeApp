@@ -21,7 +21,7 @@ import static com.example.cafeapp.MainActivity.customerOrder;
  * @Authors Matthew Schilling and Gordon Miller
  * The donut activity class handles ordering of donuts for the cafe app.
  */
-public class DonutActivity extends AppCompatActivity {
+public class OrderingDonutActivity extends AppCompatActivity {
     public static final String DONUT_ORDER_KEY = "com.example.cafeapp.DONUTKEY";
     private ArrayList<Donut> curOrder = new ArrayList<>();
     private ArrayList<Order> donutOrder = new ArrayList<>();

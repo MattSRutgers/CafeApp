@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view the donut screen object
      */
     public void startDonutOrder(View view){
-        Intent intent = new Intent(this, DonutActivity.class);
+        Intent intent = new Intent(this, OrderingDonutActivity.class);
         startActivityForResult(intent, DONUT_ORDER);
     }
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view the coffee screen object
      */
     public void startCoffeeOrder(View view){
-        Intent intent = new Intent(this, CoffeeActivity.class);
+        Intent intent = new Intent(this, OrderingCoffeeActivity.class);
         startActivity(intent);
     }
 
