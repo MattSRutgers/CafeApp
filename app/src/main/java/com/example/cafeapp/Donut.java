@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * @author Matthew Schilling and Gordon Miller
- *
+ * the donut class is a subclass of the menu item class and models a donut.
  */
 public class Donut extends MenuItem implements Customizable, Serializable {
 	private String flavor;
@@ -24,6 +24,7 @@ public class Donut extends MenuItem implements Customizable, Serializable {
 		super(DONUT);
 		this.flavor = flavor;
 	}
+
 
 	@Override
 	public boolean add(Object obj) {

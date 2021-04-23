@@ -10,14 +10,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.example.cafeapp.MainActivity.customerOrder;
+import static com.example.cafeapp.MenuItem.doubleToDollar;
 
+/**
+ * @Author Matthew Schilling and Gordon Miller
+ * The coffee activity class allows a user to select what type of coffee they would like then
+ * creates a coffee object based on that selection
+ */
 public class CoffeeActivity extends AppCompatActivity {
     private String coffeeSize = "Short";
     private String addIns = "|";
     private int numAddIns;
     private int orderNum = 100;
-    private double subtotal = 1.99;
+    private double subtotal;
     private double sizeCost;
+    private double addInCost;
     private final static double SHORTCOST = 1.99;
     private final static double TALLCOST = 2.49;
     private final static double GRANDECOST = 2.99;
@@ -28,6 +35,12 @@ public class CoffeeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coffee);
     }
+
+    /**
+     * The add coffee method creates a coffee object and adds it to the order list once the user
+     * finalizes their choices
+     * @param view
+     */
     public void addCoffee(View view){
         //coffeeSize = ((RadioButton) view).getText().toString();
         CheckBox cream = (CheckBox) findViewById(R.id.creamBox);
@@ -64,6 +77,10 @@ public class CoffeeActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * This method will listen for selections of coffee size and update the subtotal
+     * @param view
+     */
     public void onRadioButtonClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
         if (checked) {
@@ -84,11 +101,18 @@ public class CoffeeActivity extends AppCompatActivity {
             }
 
             final TextView setCoffeePrice = (TextView) findViewById(R.id.subtotal);
-            setCoffeePrice.setText((Double.toString(subtotal)));
+            subtotal = 0.0;
+            subtotal += sizeCost;
+            String temp = doubleToDollar(subtotal);
+            setCoffeePrice.setText(temp);
             //Toast.makeText(getApplicationContext(),coffeeSize, Toast.LENGTH_SHORT).show();
         }
         }
 
+    /**
+     * This method will listen for a checkbox being clicked and update the total cost for addins
+     * @param view
+     */
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
@@ -102,17 +126,19 @@ public class CoffeeActivity extends AppCompatActivity {
             case R.id.caramelBox:
             case R.id.syrupBox:
                 if (checked)
-                    subtotal += 0.2;
+                    addInCost += 0.2;
                 else
-                    if(subtotal>=0.2) {
-                        subtotal -= 0.2;
+                    if(addInCost>=0.2) {
+                        addInCost -= 0.2;
                 }
                 break;
             default:
                 //setSubtotal.setText((Double.toString(subtotal)));
 
         }
-        setSubtotal.setText((Double.toString(subtotal)));
+        subtotal += addInCost;
+        String temp = doubleToDollar(subtotal);
+        setSubtotal.setText(temp);
     }
 
 }

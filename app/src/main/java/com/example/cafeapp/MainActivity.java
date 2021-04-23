@@ -12,6 +12,10 @@ import java.util.ArrayList;
 
 import static com.example.cafeapp.DonutActivity.DONUT_ORDER_KEY;
 
+/**
+ * @Author Matthew Schilling and Gordon Miller
+ * The main activity will be the main menu for the cafe app and handles calling the other views
+ */
 public class MainActivity extends AppCompatActivity {
 
     public static final int DONUT_ORDER = 1;
@@ -44,12 +48,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * The userorder method starts a view to let the user maintain their order
+     * @param view the main menu view
+     */
     public void userOrder(View view){
         Intent intent = new Intent(this, userOrder.class);
         intent.putExtra("Test", (Serializable) customerOrder);
         startActivity(intent);
     }
 
+    /**
+     * This method calls the store order view
+     * @param view the main menu view
+     */
     public void startStoreOrder(View view){
         Intent intent = new Intent(this, StoreOrders.class);
         intent.putExtra("Test2", (Serializable) storeOrder);

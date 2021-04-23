@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 /**
  * @author Matthew Schilling and Gordon Miller
- *
+ * The Coffee class is a subclass of menu item that models a cup of coffee. it can have a size and addins
  */
 public class Coffee extends MenuItem implements Customizable, Serializable {
 	private String size;

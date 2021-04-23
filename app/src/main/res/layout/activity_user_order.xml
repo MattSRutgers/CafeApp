@@ -20,8 +20,8 @@
         android:id="@+id/addToStoreOrders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="16dp"
         android:onClick="finalizeOrder"
         android:text="@string/addToStore"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,4 +36,66 @@
         android:text="@string/userOrderInstruction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userOrderSubLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="132dp"
+        android:text="@string/userSubView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/userSubValue"
+        android:layout_width="50dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="100dp"
+        android:text="@string/userSubString"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/taxView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="132dp"
+        android:text="@string/TaxView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userOrderSubLabel" />
+
+    <TextView
+        android:id="@+id/taxValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="7dp"
+        android:text="@string/taxString"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userSubValue"
+        app:layout_constraintTop_toBottomOf="@+id/taxView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/totalView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="132dp"
+        android:text="@string/totalString"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/taxView" />
+
+    <TextView
+        android:id="@+id/totalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/totalValue"
+        app:layout_constraintStart_toEndOf="@+id/taxValue"
+        app:layout_constraintTop_toBottomOf="@+id/totalView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

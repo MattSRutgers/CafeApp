@@ -14,6 +14,10 @@ import java.util.ArrayList;
 import static com.example.cafeapp.MainActivity.customerOrder;
 import static com.example.cafeapp.MainActivity.storeOrder;
 
+/**
+ * @Author Matthew Schilling and Gordon Miller
+ * THe user order method keeps track of the users current order
+ */
 public class userOrder extends AppCompatActivity {
     private ArrayList<Order> passList = new ArrayList<>();
 

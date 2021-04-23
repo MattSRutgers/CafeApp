@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.Serializable;
@@ -25,6 +26,8 @@ public class DonutActivity extends AppCompatActivity {
     private ArrayList<Donut> curOrder = new ArrayList<>();
     private ArrayList<Order> donutOrder = new ArrayList<>();
     private int orderNumber = 1;
+    private static  final double DONUT_PRICE = 1.39;
+    private double subtotalDisplay;
 
     /**
      * This method initializes the spinner objects with their values when creating
@@ -85,6 +88,7 @@ public class DonutActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), (Integer.toString(count) +
                     donut.toString()), Toast.LENGTH_SHORT).show();
         }
+        subtotal();
 
     }
 
@@ -98,13 +102,21 @@ public class DonutActivity extends AppCompatActivity {
             donutOrder.add(donut);
         orderNumber ++;
         curOrder.clear();
+        subtotalDisplay = 0.00;
         return donutOrder;
+
     }
 
     /**
      * The subtotal method keeps a running total of the donut costs
      */
     public void subtotal(){
+        for (Donut donut: curOrder){
+            subtotalDisplay += DONUT_PRICE;
+
+        }
+        final TextView donutSubtotal = (TextView) findViewById(R.id.subtotalDonut);
+        donutSubtotal.setText(Double.toString(subtotalDisplay));
 
     }
 

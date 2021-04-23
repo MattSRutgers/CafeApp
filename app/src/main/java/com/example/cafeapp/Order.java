@@ -18,11 +18,20 @@ public class Order implements Customizable, Serializable {
 
 	private int orderNumber;
 
-
+	/**
+	 * The constructor for the order class.
+	 * @param num the order number for this order
+	 */
 	Order(int num) {
+
 		this.orderNumber = num;
 	}
 
+	/**
+	 * The add method allows an order to be added
+	 * @param obj the order to be added
+	 * @return boolen based on adding success
+	 */
 	@Override
 	public boolean add(Object obj) {
 		if(obj != null) {
@@ -32,12 +41,21 @@ public class Order implements Customizable, Serializable {
 		return false;
 	}
 
+	/**
+	 * The remove method allows an order to be removed
+	 * @param obj the order to be removed
+	 * @return boolen based on removal success
+	 */
 	@Override
 	public boolean remove(Object obj) {
 		itemList.remove((int)obj);
 		return true;
 	}
 
+	/**
+	 * The to string method formats a string representing the order
+	 * @return the string with the order details
+	 */
 	@Override
 	public String toString() {
 		String output = "Order Number " + this.orderNumber + ":\n";
@@ -48,6 +66,10 @@ public class Order implements Customizable, Serializable {
 		return output;
 	}
 
+	/**
+	 * The set id method can set the id for the order
+	 * @param id the id we want to set
+	 */
 	public void setId(int id) {
 		this.orderNumber = id;
 	}
@@ -60,6 +82,10 @@ public class Order implements Customizable, Serializable {
 		return itemList.get(index);
 	}
 
+	/**
+	 * The get total method gets the total cost of the order
+	 * @return a double equal to the order's cost
+	 */
 	public double getTotal() {
 		double sum = 0;
 		for(int i=0;i<itemList.size();i++) {
@@ -68,6 +94,11 @@ public class Order implements Customizable, Serializable {
 		return sum;
 	}
 
+	/**
+	 * The double to dollar method formats a double as a string in currency format.
+	 * @param value
+	 * @return
+	 */
 	private static String doubleToDollar(double value) {
 		if(value == 0) {
 			return "0.00";

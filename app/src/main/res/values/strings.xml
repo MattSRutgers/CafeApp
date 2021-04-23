@@ -27,6 +27,16 @@
     <string name="addToStore">Finalize Order</string>
     <string name="userOrderInstruction">Click an item to remove</string>
     <string name="storeRemoveBtn">Remove Order</string>
+    <string name="donutOrderLabel">Press to add selected donuts to order</string>
+    <string name="donutReviewText">Press to review and finalize order</string>
+    <string name="donutSub">Subtotal: $</string>
+    <string name="subDonutTotal">0.00</string>
+    <string name="userSubView">Subtotal</string>
+    <string name="userSubString">0.00</string>
+    <string name="TaxView">Tax</string>
+    <string name="taxString">0.00</string>
+    <string name="totalString">Total</string>
+    <string name="totalValue">0.00</string>
     <string-array name="donutArray">
         <item>Chocolate</item>
         <item>Glazed</item>
