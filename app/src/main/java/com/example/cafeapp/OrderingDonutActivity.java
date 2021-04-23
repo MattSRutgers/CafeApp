@@ -2,7 +2,6 @@ package com.example.cafeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import static com.example.cafeapp.MainActivity.DONUT_ORDER;
 import static com.example.cafeapp.MainActivity.customerOrder;
 
 /**
@@ -37,7 +35,7 @@ public class OrderingDonutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donut);
+        setContentView(R.layout.activity_ordering_donut);
         //getIntent();
 
         //create the donut flavor spinner and populate
